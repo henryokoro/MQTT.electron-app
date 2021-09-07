@@ -25,6 +25,11 @@ let myLambda = () => {
     newButton.classList.add("button")
     newButton.classList.add("new-line")
 
+
+    newButton.addEventListener("click", () => {
+        console.log(newButton.textContent)
+    })
+
     // newDiv.appendChild(newButton)
     content.appendChild(newButton)
     counter++
