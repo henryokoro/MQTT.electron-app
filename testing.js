@@ -1,3 +1,6 @@
+
+let myButton = document.getElementsByClassName("my-submit-button")[0]
+
 function myButtonHandler()
 {
     console.log("Bruh, button clicked")
@@ -6,5 +9,5 @@ function myButtonHandler()
     myButton.textContent = 'My Test'
 }
 
-let myButton = document.getElementById("connectBtn")
 myButton.addEventListener("click",myButtonHandler)
+// let myButton = document.getElementsByClassName("is-danger")

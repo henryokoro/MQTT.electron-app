@@ -15,3 +15,10 @@
 .select select {
   width: 100%;
 }
+
+.my-submit-button {
+    border-color: black;
+    border-width: thick;
+    border-style: thick;
+
+}
