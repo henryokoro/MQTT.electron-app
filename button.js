@@ -7,7 +7,7 @@ class Button{
         this.button.classList.add("new-line")
         //Makes the event listener happen within this class instance
         this.button.addEventListener("click",this.handleClick.bind(this))
-        this.element = this.button.element
+        this.element = this.button
     }
 
 
