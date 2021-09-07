@@ -16,22 +16,8 @@ let myLambda = () => {
     myButton.classList.remove("is-danger")
     myButton.classList.add("is-link")
     myButton.textContent = 'My Test'
-    //Create new button (can only pass in tags that are html)
-    // let newDiv = document.createElement("div")
-    let newButton = document.createElement("button")
-    newButton.textContent = "New Button " + counter
-    content.appendChild(newButton)
-    newButton.classList.add("is-primary")
-    newButton.classList.add("button")
-    newButton.classList.add("new-line")
-
-
-    newButton.addEventListener("click", () => {
-        console.log(newButton.textContent)
-    })
-
-    // newDiv.appendChild(newButton)
-    content.appendChild(newButton)
+    let newButton = new Button("My Button " + counter)
+    content.appendChild(newButton.element)
     counter++
 
 }
