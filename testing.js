@@ -16,7 +16,7 @@ let myLambda = () => {
     myButton.classList.remove("is-danger")
     myButton.classList.add("is-link")
     myButton.textContent = 'My Test'
-    let newButton = new Button("My Button " + counter)
+    let newButton = new Button("My Button " + counter,counter)
     content.appendChild(newButton.element)
     counter++
 
@@ -24,5 +24,28 @@ let myLambda = () => {
 
 
 myButton.addEventListener("click", myLambda)
+
+// Promises
+
+function delay(t,v){
+    return new Promise(function(resolve,reject){
+        reject("Timeout error")
+        //setTimeout(resolve.bind(null,v),t)
+    });
+}
+
+function main(){
+    console.log(Date())
+    delay(5000)
+        .then( () => {
+            console.log("5 seconds have passed")
+            console.log(Date())
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+
+}
     
 
+main()
