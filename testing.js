@@ -36,14 +36,16 @@ function delay(t,v){
 
 function main(){
     console.log(Date())
-    delay(5000)
-        .then( () => {
-            console.log("5 seconds have passed")
-            console.log(Date())
-        })
-        .catch((error) => {
-            console.log(error)
-        })
+    try{
+        delay(5000)
+            .then( () => {
+                console.log("5 seconds have passed")
+                console.log(Date())
+            })
+    }
+    catch(error){
+        console.log(error)
+    }
 
 }
     
