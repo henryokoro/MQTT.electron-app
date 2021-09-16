@@ -18,7 +18,10 @@
   "license": "CC0-1.0",
   "dependencies": {
     "bulma": "^0.9.0",
-    "mqtt": "^4.2.8"
+    "electron-prompt": "^1.7.0",
+    "mqtt": "^4.2.8",
+    "node-csv-parse": "^1.2.0",
+    "simple-ssh": "^1.0.0"
   },
   "devDependencies": {
     "electron": "^10.4.7"
