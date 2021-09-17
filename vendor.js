@@ -8,4 +8,3 @@ const addBotApplicationBtn = document.getElementById('add-bot-application');
 const removeBotApplication = document.getElementById('remove-bot-application');
 
 const debugCommandCentral = document.getElementById('debug-item');
-
