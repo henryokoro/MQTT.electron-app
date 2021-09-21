@@ -57,7 +57,7 @@ function getInput() {
 			console.log('result', result);
 			ssh(result, BOT_USER ,BOT_PASSWORD);
 			//store entered IP address 
-			storedIPAddress.push(result);
+			storedIPAddress.concat(result);
 		}
 	})
 	.catch(console.error);
@@ -66,12 +66,11 @@ function getInput() {
 	    
 }
 
-function addBotHandler() {
+function addBotViaSSHHandler() {
     getInput();
 }
 
 document.addEventListener("DOMContentLoaded", function(event) { 
-    //Do work
-	addBotApplicationBtn.addEventListener('click',addBotHandler);
+	addBotApplicationBtn.addEventListener('click',addBotViaSSHHandler);
 
 });
