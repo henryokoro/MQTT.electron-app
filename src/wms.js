@@ -5,11 +5,11 @@ const botMetrics = document.getElementById("botMetrics");
 const botMovement = document.getElementById('botMovement');
 const wmsBotIdInput = document.getElementById('wmsBotIdInput');
 
-const MVH_BROKER_ADDRESS = 'http://10.16.128.50:1883/'
+const MVH_BROKER_ADDRESS = 'http://172.16.152.100:1883/'
 
 async function main(){
     // Connect to MQTT Broker
-    const client = await MQTT.connectAsync(MVH_BROKER_ADDRESS);
+    const client = await MQTT.connect(MVH_BROKER_ADDRESS);
     console.log("Starting Connection");
     try{
         await client.publish("hello", "it works");
@@ -25,7 +25,7 @@ async function main(){
 
         let robot = new Robot(wmsBotIdInput.value, client)
         let moveToLocationUI = new MoveToLocation(robot)
-        let botMetricsUI = new BotMetrics()
+        let botMetricsUI = new BotMetrics(robot)
 
         botMetrics.appendChild(botMetricsUI.element)
         botMovement.appendChild(moveToLocationUI.element)

@@ -1,5 +1,6 @@
 class BotMetrics{
-    constructor(){
+    constructor(robot){
+
         this.table = document.createElement('table');
         this.element = this.table;
         this.thead = document.createElement('thead');
@@ -51,21 +52,27 @@ class BotMetrics{
         
         this.tbody.appendChild(row_2);
         this.tbody.appendChild(row_3);
+        this.tbody.appendChild(row_4);
+        this.tbody.appendChild(row_5);
+        
+        this.robot = robot
+        this.robot.on(ROBOT_EVENT_STATUS, this.handleStatus.bind(this))
     }
 
     show(){
-        this.element.sstyle.display = "block"
+        this.element.style.display = "block"
     }
 
     hide(){
-        this.element.sstyle.display = "none"
+        this.element.style.display = "none"
     }
 
     handleStatus(status){
         console.log("Bot Metrics updating")
+        console.log(status)
         this.row_2_data_2.innerText = status.x
         this.row_3_data_2.innerText = status.y
-        this.row_4_data_2.innerText = status.botDir
-        this.row_5_data_2.innerText = status.battery
+        this.row_4_data_2.innerText = status.botDirection
+        this.row_5_data_2.innerText = status.batteryCharge
     }
 }

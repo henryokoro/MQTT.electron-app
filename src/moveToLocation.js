@@ -52,17 +52,23 @@ class MoveToLocation{
         row_2.appendChild(row_2_data_3);
         this.tbody.appendChild(row_2);
         this.tbody.appendChild(row_3);
+
+        this.robot = robot
     }
 
     show(){
-        this.element.sstyle.display = "block"
+        this.element.style.display = "block"
     }
 
     hide(){
-        this.element.sstyle.display = "none"
+        this.element.style.display = "none"
     }
 
     handleClick(){
+        let x = this.xInput.value
+        let y = this.yInput.value
+        let speed = this.speed.value
+        this.robot.moveToLocation(x, y, speed)
         console.log("Moving Robot, not really")
     }
 
