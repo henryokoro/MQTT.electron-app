@@ -32,36 +32,24 @@
             <div class="column">
               <label class="label">Bot Metrics</label>
               <div class="box" id="botMetrics">
-                <style>
-                  table{
-                      border-collapse: collapse;
-                      border-spacing: 0;
-                      }
-                  th, td{
-                        padding: 10px 20px;
-                        border: 1px solid #000;
-                      }
-                </style>
               </div>
             </div>
             <div class="column">
               <label class="label">Bot Movement</label>
               <div class="box" id="botMovement">
-                <style>
-                  table{
-                      border-collapse: collapse;
-                      border-spacing: 0;
-                      }
-                  th, td{
-                        padding: 10px 20px;
-                        border: 1px solid #000;
-                      }
-                </style>
               </div>
               <ul id="bot-movement"></ul>
             </div>
             <div class="column">
-              Fourth column
+              <label class="label">Plate Selection</label>
+              <div class="box" id="wmsPodIdButton">
+              </div>
+                <div class="control">
+                  <input class="input" placeholder="Enter Pod Number Here" id="wmsLiftPodInput">
+                  <button class="button is-primary" id="wmsLiftPodButton">Lift Pod</button>
+                </div>
+              </div>
+              <ul id="bot-movement"></ul>
             </div>
           </div>
     <script src="./container.js"></script>
@@ -70,5 +58,7 @@
     <script src="./moveToLocation.js"></script>
     <script src="./botMetrics.js"></script>
     <script src="./robot.js"></script>
+    <script src="./scanForPodId.js"></script>
+    <script src="./getPodIdInput.js"></script>
     <script src="./wms.js"></script>
 </html>

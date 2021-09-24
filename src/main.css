@@ -177,3 +177,12 @@ input[type=text]{
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
   width:75%;
 }
+
+table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  }
+th, td{
+    padding: 10px 20px;
+    border: 1px solid #000;
+  }

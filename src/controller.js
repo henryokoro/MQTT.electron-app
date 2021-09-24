@@ -1,12 +1,13 @@
 class Controller{
     constructor(){
-        self.asyncClient = await connectAsync(MVH_BROKER_ADDRESS);
-        self.robots = {}
+        this.asyncClient = await connectAsync(MVH_BROKER_ADDRESS);
+        this.robots = {}
     }
 
+    //TODO: Map Bot ID's so we can track how many bots have been connected to.
     addRobot(botId){
         let robot = new Robot(botId)
-        self.robots[botId] = robot
+        this.robots[botId] = robot
     }
 
     async sendCommand(topic, message){
@@ -14,6 +15,14 @@ class Controller{
     }
 
     moveTolocationHandler(){
-        self.sendCommand(topic, message)
+        this.sendCommand(topic, message)
+    }
+
+    scanForPodIdHandler(){
+        this.sendCommand(topic, message)
+    }
+
+    liftPodHandler(){
+        this.sendCommand(topic, message)
     }
 }

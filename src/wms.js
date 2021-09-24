@@ -4,6 +4,9 @@ const wmsConnectButton = document.getElementById("wmsConnectButton");
 const botMetrics = document.getElementById("botMetrics");
 const botMovement = document.getElementById('botMovement');
 const wmsBotIdInput = document.getElementById('wmsBotIdInput');
+const wmsScanPodButton = document.getElementById('wmsPodIdButton');
+const wmsLiftPodButton = document.getElementById('wmsLiftPodButton');
+const wmsLiftPodInput = document.getElementById('wmsLiftPodInput');
 
 const MVH_BROKER_ADDRESS = 'http://172.16.152.100:1883/'
 
@@ -26,9 +29,17 @@ async function main(){
         let robot = new Robot(wmsBotIdInput.value, client)
         let moveToLocationUI = new MoveToLocation(robot)
         let botMetricsUI = new BotMetrics(robot)
-
+        let scanPodUI = new ScanForPodId(robot,botMetricsUI);
+       
         botMetrics.appendChild(botMetricsUI.element)
         botMovement.appendChild(moveToLocationUI.element)
+        wmsScanPodButton.appendChild(scanPodUI.element);
+        
+    })
+
+    wmsLiftPodButton.addEventListener('click', (event) => {
+        let liftPodUI = new LiftPod(wmsLiftPodInput.value);
+        wmsLiftPodButton.appendChild(liftPodUI.element);
     })
 }
 
